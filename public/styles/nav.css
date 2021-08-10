@@ -1,0 +1,24 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  font-family: "Bungee";
+  padding: 0 1.5em 0 1.5em;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 50px;
+  z-index: 1;
+}
+
+nav .right {
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav .movIcon {
+  color: red;
+}
