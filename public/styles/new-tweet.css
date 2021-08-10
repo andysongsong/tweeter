@@ -3,3 +3,27 @@
   flex-direction: column;
   width: 100%;
 }
+.question {
+  font-weight: bold;
+}
+.tweetInput {
+  padding-bottom: 0em;
+  margin-top: 0em;
+  border-bottom-style: solid;
+}
+
+.submitpart {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.buttonStyle {
+  font-family: "Bungee";
+  background-color: rgb(108, 108, 216);
+  color: rgb(235, 238, 240);
+}
+.counter {
+  font-family: "Bungee";
+}
