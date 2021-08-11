@@ -3,6 +3,7 @@ article {
   border-color: rgb(11, 34, 34);
   width: 100%;
   padding: 1em 1em 1em 1em;
+  margin-bottom: 1em;
 }
 article header {
   display: flex;
@@ -25,4 +26,10 @@ article footer {
   margin-right: 5px;
   height: 30px;
   width: 30px;
+}
+article:hover {
+  box-shadow: 5px 5px rgb(100, 65, 94);
+}
+.icon i:hover {
+  color: rgb(206, 188, 30);
 }
