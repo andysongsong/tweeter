@@ -1,13 +1,15 @@
 $(document).ready(function () {
   console.log("DOM is ready");
 
-  const text = $("textarea");
+  const text = $("#tweet-text");
   text.on("keyup", function () {
-    console.log(event.target.value);
+    let remain = 140 - this.value.length;
+    let count = $(".counter");
+    count.text(remain);
+    if (this.value.length > 140) {
+      count.addClass("overLimit");
+    } else {
+      count.removeClass("overLimit");
+    }
   }); // --- our code goes here ---
-
-  const count = $(".counter");
-  count.on("click", function () {
-    console.log(this);
-  });
 });

@@ -27,3 +27,6 @@
 .counter {
   font-family: "Bungee";
 }
+.overLimit {
+  color: red;
+}
