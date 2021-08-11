@@ -9,6 +9,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   font-size: 50px;
+  position: fixed;
+  top: 0;
   z-index: 1;
 }
 
