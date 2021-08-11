@@ -17,6 +17,10 @@
   background: transparent;
   border: none;
 }
+#tweet-text:focus,
+input:focus {
+  outline: 0;
+}
 
 .submitpart {
   display: flex;
