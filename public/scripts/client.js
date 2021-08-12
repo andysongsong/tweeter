@@ -64,10 +64,12 @@ $(document).ready(function () {
     console.log("1111111", words);
     const tc = $(".counter")[0].value;
     if (tc < 0) {
-      alert("Too much word!");
-    } else if (tc === 140) {
-      alert("please write something.");
+      $(".error1").text("Too much word!").slideDown();
+    } else if (tc === "140") {
+      $(".error2").text("please write somthing").slideDown();
     } else {
+      $(".error1").slideUp();
+      $(".error2").slideUp();
       $.ajax("/tweets", { method: "POST", data: words })
         .then(() => {
           $("#tweetForm").empty();
