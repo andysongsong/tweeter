@@ -22,11 +22,6 @@ article footer {
   align-items: center;
 }
 
-.avatar_icon {
-  margin-right: 5px;
-  height: 30px;
-  width: 30px;
-}
 article:hover {
   box-shadow: 5px 5px rgb(100, 65, 94);
 }

@@ -1,10 +1,11 @@
+// Fake data taken from initial-tweets.json
 $(document).ready(function () {
-  // Fake data taken from initial-tweets.json
-
   const renderTweets = function (tweets) {
+    const $oldTweets = $("#oldTweets");
+    $oldTweets.empty();
     for (let tweet of tweets) {
       const newTweet = createTweetElement(tweet);
-      $("#oldTweets").append(newTweet);
+      $oldTweets.prepend(newTweet);
     }
 
     // loops through tweets
@@ -15,48 +16,58 @@ $(document).ready(function () {
   const createTweetElement = function (tweet) {
     let time = timeago.format(tweet.created_at);
     let $tweet = $(`
-       <article> 
-          <header>
-            <div class="image_container">
-              <img class='avatar_icon' src="${tweet.user.avatars}"> 
-             <span >${tweet.user.name}</span>
-            </div>
-           <span> ${tweet.user.handle}</span>
-          </header>
-          <p><strong>${tweet.content.text}</strong></p>
-          <footer>
-            <span>${time}</span>
-            <div class="icon">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>`);
+  <article> 
+  <header>
+  <div class="image_container">
+  <img src="${tweet.user.avatars}"> 
+  <span >${tweet.user.name}</span>
+  </div>
+  <span> ${tweet.user.handle}</span>
+  </header>
+  <p><strong>${tweet.content.text}</strong></p>
+  <footer>
+  <span>${time}</span>
+  <div class="icon">
+  <i class="fas fa-flag"></i>
+  <i class="fas fa-retweet"></i>
+  <i class="fas fa-heart"></i>
+  </div>
+  </footer>
+  </article>`);
+    $tweet.append($twet);
 
     return $tweet;
   };
 
-  const loadtweets = function () {
+  const loadTweets = function () {
     $.ajax({
-      url: "/tweets",
       method: "GET",
-      success: (tweet) => {
-        console.log(tweet);
-        createTweetElement(tweet);
-      },
-      error: (err) => {
-        console.log(err);
-      },
+      url: "/tweets",
+    }).then((result) => {
+      console.log(result);
+      renderTweets(result);
     });
   };
+  loadTweets();
 
   const $form = $("#tweetForm");
   $form.on("submit", function (event) {
     event.preventDefault();
     console.log("submit form");
-    const tweetData = $(this).serialize();
-    console.log("1111111", tweetData);
-    $.post("/tweets", tweetData).then(loadtweets);
+    const words = $(this).serialize();
+    console.log("1111111", words);
+    const tc = $(".counter")[0].value;
+    if (tc < 0) {
+      alert("Too much word!");
+    } else if (tc === 140) {
+      alert("please write something.");
+    } else {
+      $.ajax("/tweets", { method: "POST", data: words })
+        .then(() => {
+          $("#tweetForm").empty();
+          loadTweets();
+        })
+        .catch((err) => console.log(err));
+    }
   });
 });
