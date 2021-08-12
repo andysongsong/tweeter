@@ -1,5 +1,11 @@
 // Fake data taken from initial-tweets.json
 $(document).ready(function () {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const renderTweets = function (tweets) {
     const $oldTweets = $("#oldTweets");
     $oldTweets.empty();
@@ -24,7 +30,7 @@ $(document).ready(function () {
   </div>
   <span> ${tweet.user.handle}</span>
   </header>
-  <p><strong>${tweet.content.text}</strong></p>
+  <p><strong>${escape(tweet.content.text)}</strong></p>
   <footer>
   <span>${time}</span>
   <div class="icon">
