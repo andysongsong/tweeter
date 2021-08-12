@@ -34,7 +34,7 @@ $(document).ready(function () {
   </div>
   </footer>
   </article>`);
-    $tweet.append($twet);
+    $tweet.append($tweet);
 
     return $tweet;
   };
