@@ -34,7 +34,25 @@ main {
 .section2 {
   width: 90%;
 }
-
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .container {
+    margin: 50px;
+    margin-top: 200px;
+    max-width: 700px;
+  }
+  .header1 {
+    width: 400px;
+    margin-left: 5%;
+    height: 400px;
+    padding-top: 2em;
+  }
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

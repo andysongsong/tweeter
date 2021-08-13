@@ -18,7 +18,7 @@ $(document).ready(function () {
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
   };
-
+  //format tweet
   const createTweetElement = function (tweet) {
     let time = timeago.format(tweet.created_at);
     let $tweet = $(`
@@ -44,7 +44,7 @@ $(document).ready(function () {
 
     return $tweet;
   };
-
+  //fetch tweet when submit
   const loadTweets = function () {
     $.ajax({
       method: "GET",
@@ -56,6 +56,7 @@ $(document).ready(function () {
   };
   loadTweets();
 
+  //tweet form
   const $form = $("#tweetForm");
   $form.on("submit", function (event) {
     event.preventDefault();
