@@ -6,9 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshot
 
-https://github.com/andysongsong/tweeter/blob/master/docs/desks.png?raw=true
-https://github.com/andysongsong/tweeter/blob/master/docs/error.png?raw=true
-https://github.com/andysongsong/tweeter/blob/master/docs/mobile.png?raw=true
+![ScreenShoot](https://github.com/andysongsong/tweeter/blob/master/docs/desks.png?raw=true)
+![ScreenShoot](https://github.com/andysongsong/tweeter/blob/master/docs/error.png?raw=true)
+![ScreenShoot](https://github.com/andysongsong/tweeter/blob/master/docs/mobile.png?raw=true)
 
 ## Getting Started
 
