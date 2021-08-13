@@ -5,11 +5,21 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -18,44 +28,70 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/othertweet.css" type="text/css" />
     <!-- External JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- App JS -->
   </head>
-  
+
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
       <div class="right">
         <span><strong>Write</strong> a new tweet</span>
-        
+
         <div class="movIcon">
-          <button type='click'> <i class="fas fa-angle-double-down"></i></button>
+          <button type="click"><i class="fas fa-angle-double-down"></i></button>
         </div>
       </div>
     </nav>
     <header class="header1">
-      <div class='image_container'>
-        <img src="/images/profile-hex.png"> 
+      <div class="image_container">
+        <img src="/images/profile-hex.png" />
       </div>
-      <br>
+      <br />
       <div>
         <h2 class="name">Your Name</h2>
       </div>
     </header>
-    
+
     <!-- Page-specific (main) content here -->
-    <main class="container" id= "mainContainer">
+    <main class="container" id="mainContainer">
       <section class="new-tweet">
         
-        <div class="error1 hide"></div>
-        <div class="error2 hide"></div>
+        <div class="err1" >
+          <div class="error1">
+          <i class='fas fa-exclamation-triangle'></i>
+          <p>Too much word!</p>
+          <i class='fas fa-exclamation-triangle'></i>
+        </div>
+      </div>
+        
+        <div class="err2" > 
+          <div class="error1">
+          <i class='fas fa-exclamation-triangle'></i>
+          <p>please write somthing!</p>
+          <i class='fas fa-exclamation-triangle'></i>
+        </div>
+      </div>
+       
 
         <h2>Compose Tweet</h2>
 
-        <form id= "tweetForm" action='/tweets' method="POST" >
-          <label class="question" for="tweet-text">What are you humming about?</label>
+        <form id="tweetForm" action="/tweets" method="POST">
+          <label class="question" for="tweet-text"
+            >What are you humming about?</label
+          >
           <div class="tweetInput">
             <textarea name="text" id="tweet-text"></textarea>
           </div>
@@ -64,13 +100,14 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-
       </section>
       <!-- other tweet -->
-      <section id="oldTweets">
-      </section>
+      <section id="oldTweets"></section>
     </main>
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script
+      type="text/javascript"
+      src="/scripts/composer-char-counter.js"
+    ></script>
   </body>
-  </html>
+</html>

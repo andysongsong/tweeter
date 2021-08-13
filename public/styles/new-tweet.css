@@ -40,3 +40,17 @@ input:focus {
 .overLimit {
   color: red;
 }
+.err1,
+.err2 {
+  color: red;
+  border: solid;
+  display: none;
+  border-radius: 10px;
+  flex-direction: row;
+}
+
+.error1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

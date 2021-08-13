@@ -59,20 +59,22 @@ $(document).ready(function () {
   const $form = $("#tweetForm");
   $form.on("submit", function (event) {
     event.preventDefault();
-    console.log("submit form");
+
     const words = $(this).serialize();
-    console.log("1111111", words);
+
     const tc = $(".counter")[0].value;
     if (tc < 0) {
-      $(".error1").text("Too much word!").slideDown();
+      $(".err1").slideDown();
+      $(".err2").slideUp();
     } else if (tc === "140") {
-      $(".error2").text("please write somthing").slideDown();
+      $(".err2").slideDown();
+      $(".err1").slideUp();
     } else {
-      $(".error1").slideUp();
-      $(".error2").slideUp();
+      $(".err1").slideUp();
+      $(".err2").slideUp();
       $.ajax("/tweets", { method: "POST", data: words })
         .then(() => {
-          $("#tweetForm").empty();
+          $("#tweet-text").val("");
           loadTweets();
         })
         .catch((err) => console.log(err));
